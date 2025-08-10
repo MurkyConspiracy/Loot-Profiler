@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dq8s4m3br7fbr"]
+
+[ext_resource type="FontFile" uid="uid://dadq6au1jampl" path="res://assets/fonts/Deutsch.ttf" id="1_6cx5w"]
+[ext_resource type="StyleBox" uid="uid://s3e72q7ta08m" path="res://themes/labels/menu_button_hoverpress.tres" id="2_lqegl"]
+[ext_resource type="StyleBox" uid="uid://yact8ik8xj8w" path="res://themes/labels/menu_button.tres" id="3_pjxdb"]
+
+[sub_resource type="FontVariation" id="FontVariation_ouhv8"]
+base_font = ExtResource("1_6cx5w")
+
+[sub_resource type="FontVariation" id="FontVariation_70nde"]
+base_font = ExtResource("1_6cx5w")
+
+[resource]
+Button/colors/font_color = Color(0.942053, 0.93775, 0.93347, 1)
+Button/colors/font_hover_color = Color(0.94902, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.94902, 0, 0, 1)
+Button/constants/outline_size = 3
+Button/font_sizes/font_size = 64
+Button/fonts/font = SubResource("FontVariation_ouhv8")
+Button/styles/hover = ExtResource("2_lqegl")
+Button/styles/normal = ExtResource("3_pjxdb")
+Button/styles/pressed = ExtResource("2_lqegl")
+Label/colors/font_color = Color(0.559836, 0.542272, 0.522016, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0.000874319, 0.0619473, 0.371101, 0.490196)
+Label/constants/outline_size = 6
+Label/constants/shadow_outline_size = 14
+Label/fonts/font = SubResource("FontVariation_70nde")

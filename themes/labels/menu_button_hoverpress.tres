@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://s3e72q7ta08m"]
+
+[ext_resource type="Texture2D" uid="uid://bgq5xiqqbado8" path="res://assets/textures/UI/MediavelMaster.png" id="1_eievp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m4jn"]
+atlas = ExtResource("1_eievp")
+
+[resource]
+texture = SubResource("AtlasTexture_0m4jn")
+region_rect = Rect2(2, 308, 172, 24)
+modulate_color = Color(0.733005, 0.733005, 0.733005, 1)
