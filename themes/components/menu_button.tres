@@ -4,9 +4,9 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0m4jn"]
 atlas = ExtResource("1_dgyf5")
+region = Rect2(418, 101, 90, 26)
 
 [resource]
 content_margin_top = 15.0
 content_margin_bottom = 10.0
 texture = SubResource("AtlasTexture_0m4jn")
-region_rect = Rect2(2, 308, 172, 24)

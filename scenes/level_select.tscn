@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch5ydmu0btujo"]
+
+[ext_resource type="Theme" uid="uid://b6373qg2alc7j" path="res://themes/containers/level_select_panel.tres" id="1_3shnc"]
+[ext_resource type="Script" uid="uid://8f6ylx7u55ns" path="res://scripts/level_select.gd" id="1_p0wlc"]
+[ext_resource type="PackedScene" uid="uid://pc6pp5b0h564" path="res://scenes/util/level_icon.tscn" id="3_2epne"]
+[ext_resource type="PackedScene" uid="uid://du55daae8j1ki" path="res://scenes/levels/Level1.tscn" id="4_rif6e"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p0wlc")
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3shnc")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.11
+anchor_right = 0.8
+anchor_bottom = 0.89
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="Level1" parent="GridContainer" instance=ExtResource("3_2epne")]
+layout_mode = 2
+scene_to_load = ExtResource("4_rif6e")

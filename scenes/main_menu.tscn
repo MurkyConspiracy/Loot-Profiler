@@ -1,17 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://5ssbnsv2kiro"]
+[gd_scene load_steps=4 format=3 uid="uid://5ssbnsv2kiro"]
 
-[ext_resource type="Theme" uid="uid://dq8s4m3br7fbr" path="res://themes/labels/title_text.tres" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://b8hqu5sd2vfi1" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Theme" uid="uid://dq8s4m3br7fbr" path="res://themes/components/menu_texture.tres" id="1_l6cm7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vue75"]
 bg_color = Color(0.893855, 0.68179, 0.71079, 1)
 
-[node name="Control" type="Control"]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ekxnf")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -59,3 +61,5 @@ text = "Placeholder
 layout_mode = 2
 theme = ExtResource("1_l6cm7")
 text = "Placeholder"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]

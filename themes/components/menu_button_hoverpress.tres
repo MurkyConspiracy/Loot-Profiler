@@ -4,8 +4,8 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0m4jn"]
 atlas = ExtResource("1_eievp")
+region = Rect2(418, 101, 90, 26)
 
 [resource]
 texture = SubResource("AtlasTexture_0m4jn")
-region_rect = Rect2(2, 308, 172, 24)
 modulate_color = Color(0.733005, 0.733005, 0.733005, 1)
