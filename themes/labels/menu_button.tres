@@ -1,6 +1,6 @@
 [gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://yact8ik8xj8w"]
 
-[ext_resource type="Texture2D" uid="uid://bgq5xiqqbado8" path="res://assets/textures/UI/MediavelMaster.png" id="1_dgyf5"]
+[ext_resource type="Texture2D" uid="uid://bgq5xiqqbado8" path="res://assets/textures/UI/paidfor_MediavelMaster.png" id="1_dgyf5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0m4jn"]
 atlas = ExtResource("1_dgyf5")
