@@ -19,5 +19,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = ydirection * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
+		
+	DataHandler.player_character_location = position
+	
 
 	move_and_slide()
