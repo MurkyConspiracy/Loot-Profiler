@@ -1,10 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3f3ggg1krmea"]
+[gd_scene load_steps=16 format=3 uid="uid://c3f3ggg1krmea"]
 
 [ext_resource type="Texture2D" uid="uid://c7sqlfi8e8os7" path="res://assets/textures/environment/paidfor_tinyBlocks.png" id="1_fops1"]
 [ext_resource type="Script" uid="uid://4c5753v4lxnc" path="res://scripts/player.gd" id="1_m815o"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="3_k1h4c"]
+[ext_resource type="PackedScene" uid="uid://b14pvuks4hqv4" path="res://scenes/ui/PlayerView.tscn" id="3_vbjdi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fops1"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbjdi"]
+radius = 9.01388
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c45u1"]
+radius = 16.0312
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m815o"]
 atlas = ExtResource("1_fops1")
@@ -70,26 +75,35 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="PlayerContainer" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
 z_index = 10
 script = ExtResource("1_m815o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_fops1")
+[node name="BodyShape" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -0.5)
+shape = SubResource("CircleShape2D_vbjdi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="CharacterRange" type="Area2D" parent="Player"]
+
+[node name="RangeShape" type="CollisionShape2D" parent="Player/CharacterRange"]
+shape = SubResource("CircleShape2D_c45u1")
+debug_color = Color(0.235294, 0.635294, 0, 0.0627451)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_ifk5y")
 autoplay = "default"
-frame = 7
-frame_progress = 1.0
 
-[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Player/AnimatedSprite2D"]
 zoom = Vector2(2.75, 2.75)
 position_smoothing_enabled = true
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="Player"]
 
-[node name="Virtual Joystick" parent="UI" instance=ExtResource("3_k1h4c")]
+[node name="PlayerView" parent="Player/UI" instance=ExtResource("3_vbjdi")]
+
+[node name="Virtual Joystick" parent="Player/UI" instance=ExtResource("3_k1h4c")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_right = 1.0
@@ -100,5 +114,9 @@ offset_bottom = 0.0
 grow_horizontal = 0
 joystick_mode = 1
 visibility_mode = 2
+action_left = "player_left"
+action_right = "player_right"
+action_up = "player_up"
+action_down = "player_down"
 
-[editable path="UI/Virtual Joystick"]
+[editable path="Player/UI/Virtual Joystick"]

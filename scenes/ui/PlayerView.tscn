@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b14pvuks4hqv4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpirx"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_width_left = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sicni"]
+bg_color = Color(1, 0.145098, 0, 1)
+
+[node name="PlayerView" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rpirx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HealthContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="PanelContainer/HBoxContainer/HealthContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Health"
+
+[node name="HealthValue" type="Label" parent="PanelContainer/HBoxContainer/HealthContainer"]
+layout_mode = 2
+text = "HPercent"
+
+[node name="HealthGraphic" type="Panel" parent="PanelContainer/HBoxContainer/HealthContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sicni")

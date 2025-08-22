@@ -1,6 +1,25 @@
 extends RigidBody2D
 @onready var gnome: Node2D = $"."
 @export var SPEED: int = 20
+@onready var attack_label: Label = $AttackLabel
+@onready var attack_timer: Timer = $AttackTimer
+var player_ref : CharacterBody2D
+
 
 func _physics_process(delta: float) -> void:
 	linear_velocity = (DataHandler.player_character_location - global_transform.origin).normalized() * SPEED
+	
+
+
+
+func _on_attack_timer_timeout() -> void:
+	attack_label.visible=false
+	print("Try attack...")
+	if randi_range(1, 4) == 1:
+		print("attack!")
+		attack_label.visible = true
+
+
+func _on_attack_range_area_area_entered(area: Area2D) -> void:
+	if area.get_parent().name == "Player":
+		attack_timer.start(1)
