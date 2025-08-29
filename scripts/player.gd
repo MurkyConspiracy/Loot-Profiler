@@ -1,4 +1,3 @@
-
 class_name PlayerCharacter extends CharacterBody2D
 const SPEED = 80.0
 var player_character_health : int
@@ -31,7 +30,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	DataHandler.player_character_location = global_position
-
+	DataHandler.player_character_health = player_character_health
 	move_and_slide()
 
 

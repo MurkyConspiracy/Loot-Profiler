@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b14pvuks4hqv4"]
+[gd_scene load_steps=4 format=3 uid="uid://b14pvuks4hqv4"]
+
+[ext_resource type="Script" uid="uid://0kye6w8cq0ok" path="res://scripts/player_view.gd" id="1_notme"]
+[ext_resource type="Texture2D" uid="uid://bw8ikvbq611fx" path="res://icon.svg" id="2_6srj8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpirx"]
 bg_color = Color(0, 0, 0, 1)
@@ -10,10 +13,8 @@ border_color = Color(0, 0, 0, 1)
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sicni"]
-bg_color = Color(1, 0.145098, 0, 1)
-
 [node name="PlayerView" type="CanvasLayer"]
+script = ExtResource("1_notme")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 12
@@ -40,7 +41,11 @@ text = "Health"
 layout_mode = 2
 text = "HPercent"
 
-[node name="HealthGraphic" type="Panel" parent="PanelContainer/HBoxContainer/HealthContainer"]
+[node name="HealthGraphic" type="TextureProgressBar" parent="PanelContainer/HBoxContainer/HealthContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_sicni")
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("2_6srj8")
+tint_under = Color(0, 0, 0, 1)

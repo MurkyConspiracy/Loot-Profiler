@@ -1,6 +1,7 @@
 extends Node
 
 var player_character_location : Vector2 = Vector2(0,0)
+var player_character_health : int = 0
 
 func _process(delta: float) -> void:
 		

@@ -1,4 +1,4 @@
-extends RigidBody2D
+class_name Gnome extends RigidBody2D
 @onready var gnome: Node2D = $"."
 @export var SPEED: int = 20
 @onready var attack_label: Label = $AttackLabel
@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 func _on_attack_timer_timeout() -> void:
 	attack_label.visible=false
 	print("Try attack...")
-	if randi_range(1, 4) == 1:
+	if randi_range(1, 100) <= 70:
 		print("attack!")
 		attack_label.visible = true
 		for area in attack_range_area.get_overlapping_areas():

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch5ydmu0btujo"]
+[gd_scene load_steps=4 format=3 uid="uid://ch5ydmu0btujo"]
 
 [ext_resource type="Theme" uid="uid://b6373qg2alc7j" path="res://themes/containers/level_select_panel.tres" id="1_3shnc"]
-[ext_resource type="Script" uid="uid://8f6ylx7u55ns" path="res://scripts/level_select.gd" id="1_p0wlc"]
 [ext_resource type="PackedScene" uid="uid://pc6pp5b0h564" path="res://scenes/util/level_icon.tscn" id="3_2epne"]
 [ext_resource type="PackedScene" uid="uid://du55daae8j1ki" path="res://scenes/levels/Level1.tscn" id="4_rif6e"]
 
@@ -12,7 +11,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_p0wlc")
 
 [node name="Background" type="PanelContainer" parent="."]
 layout_mode = 1
