@@ -3,6 +3,8 @@ extends RigidBody2D
 @export var SPEED: int = 20
 @onready var attack_label: Label = $AttackLabel
 @onready var attack_timer: Timer = $AttackTimer
+@onready var attack_range_area: Area2D = $AttackRangeArea
+
 var player_ref : CharacterBody2D
 
 
@@ -18,8 +20,16 @@ func _on_attack_timer_timeout() -> void:
 	if randi_range(1, 4) == 1:
 		print("attack!")
 		attack_label.visible = true
+		for area in attack_range_area.get_overlapping_areas():
+			if(
+				(area.get_parent().get_script() != null) &&
+				((area.get_parent().get_script() as Script).get_global_name() == "PlayerCharacter") &&
+				(area.get_parent().has_method("take_damage"))):
+					area.get_parent().call("take_damage", 1, gnome)
 
 
-func _on_attack_range_area_area_entered(area: Area2D) -> void:
-	if area.get_parent().name == "Player":
+
+
+func _on_attack_range_area_area_entered(area: Area2D) -> void:	
+	if ((area.get_parent().get_script() as Script).get_global_name() == "PlayerCharacter"):
 		attack_timer.start(1)
