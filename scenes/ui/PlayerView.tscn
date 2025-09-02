@@ -1,7 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b14pvuks4hqv4"]
+[gd_scene load_steps=5 format=3 uid="uid://b14pvuks4hqv4"]
 
 [ext_resource type="Script" uid="uid://0kye6w8cq0ok" path="res://scripts/player_view.gd" id="1_notme"]
 [ext_resource type="Texture2D" uid="uid://bw8ikvbq611fx" path="res://icon.svg" id="2_6srj8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_notme"]
+bg_color = Color(0, 0, 0, 0.0666667)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 0.0941176)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpirx"]
 bg_color = Color(0, 0, 0, 1)
@@ -16,36 +24,113 @@ corner_radius_bottom_left = 8
 [node name="PlayerView" type="CanvasLayer"]
 script = ExtResource("1_notme")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-anchors_preset = 12
-anchor_top = 1.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -120.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_notme")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="SkillButton1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_6srj8")
+flat = true
+clip_text = true
+
+[node name="SkillButton1Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/SkillButton1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Skill 1"
+horizontal_alignment = 1
+
+[node name="SkillButton2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_6srj8")
+
+[node name="SkillButton2Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/SkillButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Skill 2"
+horizontal_alignment = 1
+
+[node name="SkillButton3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_6srj8")
+
+[node name="SkillButton3Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/SkillButton3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Skill 3"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_rpirx")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="HealthContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+[node name="HealthContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="HealthLabel" type="Label" parent="PanelContainer/HBoxContainer/HealthContainer"]
+[node name="HealthLabel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/HealthContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Health"
 
-[node name="HealthValue" type="Label" parent="PanelContainer/HBoxContainer/HealthContainer"]
+[node name="HealthValue" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/HealthContainer"]
 layout_mode = 2
 text = "HPercent"
+horizontal_alignment = 1
 
-[node name="HealthGraphic" type="TextureProgressBar" parent="PanelContainer/HBoxContainer/HealthContainer"]
+[node name="HealthGraphic" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/HealthContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 value = 100.0
 fill_mode = 3
-nine_patch_stretch = true
+stretch_margin_bottom = 105
 texture_progress = ExtResource("2_6srj8")
 tint_under = Color(0, 0, 0, 1)
