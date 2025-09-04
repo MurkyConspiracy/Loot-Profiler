@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://2btnmrkna0pu"]
+
+[ext_resource type="Texture2D" uid="uid://db7nkr4bqbbpx" path="res://assets/textures/UI/paidfor_MediavelMaster.png" id="1_t0t33"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et0hh"]
+atlas = ExtResource("1_t0t33")
+region = Rect2(272, 272, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcxrr"]
+texture = SubResource("AtlasTexture_et0hh")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbfhv"]
+atlas = ExtResource("1_t0t33")
+region = Rect2(400, 240, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6b053"]
+texture = SubResource("AtlasTexture_fbfhv")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s53r"]
+atlas = ExtResource("1_t0t33")
+region = Rect2(400, 272, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2hcya"]
+texture = SubResource("AtlasTexture_2s53r")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u0vs"]
+atlas = ExtResource("1_t0t33")
+region = Rect2(400, 304, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pxhb4"]
+texture = SubResource("AtlasTexture_7u0vs")
+
+[resource]
+TabContainer/constants/icon_separation = 10
+TabContainer/constants/outline_size = 5
+TabContainer/constants/side_margin = 0
+TabContainer/styles/tab_disabled = SubResource("StyleBoxTexture_bcxrr")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_6b053")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_2hcya")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_pxhb4")

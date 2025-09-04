@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cgy7uob83sjpc" path="res://scenes/util/world_boarder.tscn" id="3_x4si1"]
 [ext_resource type="PackedScene" uid="uid://bbghd4gs5ax7a" path="res://scenes/util/level_background.tscn" id="4_fh0io"]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1NameHere" type="Node2D"]
 
 [node name="BaseFloor" type="TileMapLayer" parent="."]
 z_index = 1
