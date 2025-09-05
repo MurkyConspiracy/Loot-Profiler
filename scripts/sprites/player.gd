@@ -1,6 +1,7 @@
 class_name PlayerCharacter extends CharacterBody2D
 const SPEED = 80.0
 var player_character_health : int
+@onready var player: PlayerCharacter = %Player
 
 #########################
 #	Built In Ready 		#
@@ -8,13 +9,14 @@ var player_character_health : int
 #########################
 func _ready() -> void:
 	player_character_health = 100
+	DataHandler.player_character_ref = player
 
 #########################
 #  Built In PHYS Process#
 #	Handle movement		#
 #########################
 func _physics_process(delta: float) -> void:
-
+		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var xdirection := Input.get_axis("player_left","player_right")
@@ -42,3 +44,11 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage: int, source: Node):
 	player_character_health -=damage
 	print("Ouch! Health at %s" % [player_character_health])
+
+func set_pause_state(paused : bool = false) -> void:
+	set_process(paused)
+	set_process_input(paused)
+	set_process_internal(paused)
+	set_physics_process(paused)
+	set_physics_process_internal(paused)
+	

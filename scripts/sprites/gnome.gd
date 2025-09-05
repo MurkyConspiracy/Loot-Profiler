@@ -1,4 +1,4 @@
-class_name Gnome extends RigidBody2D
+class_name Gnome extends Entity
 @onready var gnome: Node2D = $"."
 @export var SPEED: int = 20
 @onready var attack_label: Label = $AttackLabel
@@ -7,13 +7,9 @@ class_name Gnome extends RigidBody2D
 
 var player_ref : CharacterBody2D
 
-
 func _physics_process(delta: float) -> void:
 	linear_velocity = (DataHandler.player_character_location - global_transform.origin).normalized() * SPEED
 	
-
-
-
 func _on_attack_timer_timeout() -> void:
 	attack_label.visible=false
 	print("Try attack...")

@@ -1,0 +1,150 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8b17wr06qqv7"]
+
+[ext_resource type="Script" uid="uid://dg5cr37j56qbm" path="res://scripts/ui/inventory_view.gd" id="1_mo5rb"]
+[ext_resource type="Texture2D" uid="uid://db7nkr4bqbbpx" path="res://assets/textures/UI/paidfor_MediavelMaster.png" id="2_82djw"]
+[ext_resource type="StyleBox" uid="uid://dwkeqkbt7vsy6" path="res://themes/components/inventory_slot_panel.tres" id="3_12ys7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuo8l"]
+atlas = ExtResource("2_82djw")
+region = Rect2(615, 211, 68, 43)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k13uw"]
+texture = SubResource("AtlasTexture_kuo8l")
+
+[node name="InventoryView" type="CanvasLayer"]
+script = ExtResource("1_mo5rb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_k13uw")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 132
+theme_override_constants/margin_bottom = 64
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 4
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel2" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel3" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel4" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel5" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel6" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel7" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel8" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel9" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel10" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel11" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel12" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel13" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel14" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel15" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="Panel16" type="Panel" parent="MarginContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_12ys7")
+
+[node name="CloseInventory" type="Button" parent="."]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 56
+text = "Close"

@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://c3f3ggg1krmea"]
 
 [ext_resource type="Texture2D" uid="uid://du4gsqlk8w7af" path="res://assets/textures/environment/paidfor_tinyBlocks.png" id="1_fops1"]
-[ext_resource type="Script" uid="uid://4c5753v4lxnc" path="res://scripts/player.gd" id="1_m815o"]
+[ext_resource type="Script" uid="uid://4c5753v4lxnc" path="res://scripts/sprites/player.gd" id="1_m815o"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="3_k1h4c"]
-[ext_resource type="PackedScene" uid="uid://b14pvuks4hqv4" path="res://scenes/ui/PlayerView.tscn" id="3_vbjdi"]
+[ext_resource type="PackedScene" uid="uid://b14pvuks4hqv4" path="res://scenes/ui/player_view.tscn" id="3_vbjdi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbjdi"]
 radius = 9.01388
@@ -78,6 +78,7 @@ animations = [{
 [node name="PlayerContainer" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
 z_index = 10
 script = ExtResource("1_m815o")
 

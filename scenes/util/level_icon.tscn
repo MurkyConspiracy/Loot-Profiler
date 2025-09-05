@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://pc6pp5b0h564"]
 
-[ext_resource type="Script" uid="uid://d0ndy1vbyr1hs" path="res://scripts/level_icon.gd" id="1_yndsn"]
+[ext_resource type="Script" uid="uid://d0ndy1vbyr1hs" path="res://scripts/ui/level_icon.gd" id="1_yndsn"]
 
 [node name="LevelIcon" type="Control"]
 layout_mode = 3

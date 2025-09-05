@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://glabpoai4eh2"]
 
-[ext_resource type="Texture2D" uid="uid://c7sqlfi8e8os7" path="res://assets/textures/environment/paidfor_tinyBlocks.png" id="1_grfxe"]
+[ext_resource type="Texture2D" uid="uid://du4gsqlk8w7af" path="res://assets/textures/environment/paidfor_tinyBlocks.png" id="1_grfxe"]
 [ext_resource type="Script" uid="uid://uxys6jysq7ct" path="res://scripts/sprites/gnome.gd" id="1_vlb5n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wced3"]

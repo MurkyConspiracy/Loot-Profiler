@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b6373qg2alc7j" path="res://themes/containers/level_select_panel.tres" id="1_3shnc"]
 [ext_resource type="PackedScene" uid="uid://pc6pp5b0h564" path="res://scenes/util/level_icon.tscn" id="3_2epne"]
-[ext_resource type="PackedScene" uid="uid://du55daae8j1ki" path="res://scenes/levels/Level1.tscn" id="4_rif6e"]
+[ext_resource type="PackedScene" uid="uid://du55daae8j1ki" path="res://scenes/levels/lavel_1.tscn" id="4_rif6e"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3

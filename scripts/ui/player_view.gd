@@ -1,9 +1,10 @@
 extends CanvasLayer
+@onready var player_view: CanvasLayer = $"."
+
 @onready var health_graphic: TextureProgressBar = %HealthGraphic
 @onready var health_value: Label = %HealthValue
 @onready var health_label: Label = %HealthLabel
 
-@onready var margin_container: MarginContainer = $MarginContainer
 @onready var skill_button_1: Button = %SkillButton1
 @onready var skill_button_2: Button = %SkillButton2
 @onready var skill_button_3: Button = %SkillButton3
@@ -15,10 +16,14 @@ extends CanvasLayer
 
 
 
+var inventory_view = preload("res://scenes/ui/inventory_view.tscn")
+var inventory_view_loaded : CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	level_name_label.text = get_tree().current_scene.name
-
+	inventory_view_loaded = inventory_view.instantiate()
+	player_view.get_parent().call_deferred("add_child",inventory_view_loaded)
+	DataHandler.player_view_ref = player_view
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -56,8 +61,12 @@ func get_button_index(eventPosition: Vector2):
 		return 5
 
 func load_inventory():
-	print("Inventory!")
-	
-	
+	if(inventory_view_loaded != null):
+		DataHandler.inventory_view_ref.show()
+		DataHandler.inventory_view_ref.set_process_input(true)
+		DataHandler.player_view_ref.hide()
+		DataHandler.player_view_ref.set_process_input(false)
+		DataHandler.set_pause_state(false)
+		
 func load_menu():
 	print("Menu!")
