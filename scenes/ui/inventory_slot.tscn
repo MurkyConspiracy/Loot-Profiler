@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://uolj3lr67u52"]
+
+[ext_resource type="Script" uid="uid://dro3a6nw1cume" path="res://scripts/ui/inventory_slot.gd" id="1_kscix"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_kscix")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
