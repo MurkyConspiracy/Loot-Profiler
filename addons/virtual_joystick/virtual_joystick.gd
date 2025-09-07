@@ -65,6 +65,10 @@ var _touch_index : int = -1
 # FUNCTIONS
 
 func _ready() -> void:
+	#Remove if not on mobile
+	if OS.get_name() != "Android":
+		queue_free()
+		
 	if ProjectSettings.get_setting("input_devices/pointing/emulate_mouse_from_touch"):
 		printerr("The Project Setting 'emulate_mouse_from_touch' should be set to False")
 	if not ProjectSettings.get_setting("input_devices/pointing/emulate_touch_from_mouse"):
